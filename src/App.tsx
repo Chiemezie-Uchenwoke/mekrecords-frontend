@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="border">
         <h1>My Count</h1>
 
         <h2> Count Value: {count} </h2>
