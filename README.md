@@ -95,3 +95,23 @@ mekrecords-frontend/
 ├── tsconfig.json
 └── vite.config.ts
 ```
+
+## Component Tree
+
+```text
+App
+├── Routes
+│   ├── Public Routes
+│   │   └── Login
+│   │
+│   └── Protected Routes (Requires Auth)
+│       ├── Dashboard Layout (Navbar + Sidebar + Content)
+│       │   ├── Dashboard
+│       │   ├── Sales
+│       │   ├── RecordSale
+│       │   ├── Batches
+│       │   ├── Reports
+│       │   └── Users (Admin Only)
+│       │
+│       └── ChangePassword
+```
