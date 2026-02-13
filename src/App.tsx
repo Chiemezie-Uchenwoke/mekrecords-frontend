@@ -1,21 +1,16 @@
-import { useState } from "react"
+import { useEffect } from 'react';
+import { useThemeStore } from '@/store/themeStore';
+import { AppRoutes } from '@/routes/AppRoutes';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const theme = useThemeStore((state) => state.theme)
 
-  return (
-    <>
-      <div className="border">
-        <h1>My Count</h1>
+  useEffect(() => {
+    document.documentElement.classList.remove('light', 'dark')
+    document.documentElement.classList.add(theme)
+  }, [theme]);
 
-        <h2> Count Value: {count} </h2>
-
-        <button onClick={() => setCount(prevCount => prevCount + 1)}>
-          Add Count
-        </button>
-      </div>
-    </>
-  )
+  return <AppRoutes />
 }
 
 export default App
